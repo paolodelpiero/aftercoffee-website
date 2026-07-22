@@ -15,7 +15,7 @@
 	<title>About — AfterCoffee LTD</title>
 	<meta
 		name="description"
-		content="AfterCoffee LTD is a four-person quantitative hedge fund trading systematic strategies in crypto markets."
+		content="AfterCoffee LTD is a quantitative proprietary trading firm built by a team from banking, trading and digital-asset infrastructure."
 	/>
 </svelte:head>
 
@@ -25,11 +25,12 @@
 	<div class="container intro__content">
 		<div class="section__head hero__in">
 			<p class="eyebrow">About us</p>
-			<h1>A small, focused quant team.</h1>
+			<h1>Built by people from banking, trading and digital-asset infrastructure.</h1>
 			<p class="lede">
-				Placeholder introduction — final copy to be provided. AfterCoffee LTD is
-				a four-person quantitative hedge fund building systematic strategies for
-				crypto markets.
+				AfterCoffee is a quantitative proprietary trading firm. It is built by a
+				team that has spent years inside banking, trading and digital-asset
+				infrastructure — and understands what it takes to trade crypto markets
+				with institutional discipline.
 			</p>
 		</div>
 	</div>
@@ -57,7 +58,17 @@
 							{/if}
 						</h3>
 						<p class="member__role">{m.role}</p>
-						<p class="member__bio placeholder">{m.bio}</p>
+						{#if m.prev?.length}
+							<p class="member__prev">
+								<span class="member__prev-label">Previously</span>
+								{#each m.prev as p (p)}
+									<span class="member__prev-badge">{p}</span>
+								{/each}
+							</p>
+						{/if}
+						<p class="member__bio" class:placeholder={m.bio.startsWith('Placeholder')}>
+							{m.bio}
+						</p>
 					</div>
 				</article>
 			{/each}
@@ -130,10 +141,36 @@
 	}
 
 	.member__role {
-		margin: 0 0 0.6rem;
+		margin: 0 0 0.5rem;
 		font-size: 0.92rem;
 		font-weight: 600;
 		color: var(--navy-500);
+	}
+
+	.member__prev {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 6px;
+		margin: 0 0 0.7rem;
+	}
+
+	.member__prev-label {
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	.member__prev-badge {
+		font-size: 0.76rem;
+		font-weight: 600;
+		color: var(--navy-600);
+		background: var(--bg-alt);
+		border: 1px solid var(--line);
+		border-radius: 6px;
+		padding: 2px 8px;
 	}
 
 	.member__bio {

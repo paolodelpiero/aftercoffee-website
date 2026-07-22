@@ -3,12 +3,14 @@
  *
  * `surnamePending: true` marks a surname still to be confirmed — the UI shows a
  * subtle placeholder. Fill `last` and drop the flag when the name is final.
+ * `prev` lists notable prior firms, shown as small badges.
  *
  * @typedef {Object} Member
  * @property {string} first
  * @property {string} last
  * @property {string} role
- * @property {string} bio         Short placeholder bio — to be replaced.
+ * @property {string} bio         Short bio.
+ * @property {string[]} [prev]    Prior firms / background.
  * @property {boolean} [surnamePending]
  */
 
@@ -25,7 +27,8 @@ export const team = [
 		last: '',
 		surnamePending: true,
 		role: 'Senior Quant Researcher',
-		bio: 'Placeholder bio — to be provided. Leads signal research and strategy design.'
+		prev: ['PIMCO', 'Deutsche Bank'],
+		bio: 'Brings institutional research experience from PIMCO and Deutsche Bank to systematic crypto strategy design — leading signal research across the firm.'
 	},
 	{
 		first: 'Adi',

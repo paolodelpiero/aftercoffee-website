@@ -1,6 +1,7 @@
 <script>
 	import { base } from '$app/paths';
 	import { families, dimensions } from '$lib/data/strategies.js';
+	import { venues, serviceProviders } from '$lib/data/infrastructure.js';
 	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
 	import { reveal } from '$lib/actions/reveal.js';
 
@@ -40,7 +41,7 @@
 	<title>AfterCoffee LTD — Systematic crypto strategies</title>
 	<meta
 		name="description"
-		content="AfterCoffee LTD is a quantitative hedge fund running systematic, market-neutral strategies in crypto markets."
+		content="AfterCoffee LTD is a quantitative proprietary trading firm running systematic, market-neutral strategies in crypto markets."
 	/>
 </svelte:head>
 
@@ -48,7 +49,7 @@
 <section class="hero">
 	<AnimatedBackground waves />
 	<div class="container hero__content">
-		<p class="eyebrow hero__in" style="--d: 0ms">Quantitative hedge fund</p>
+		<p class="eyebrow hero__in" style="--d: 0ms">Quantitative proprietary trading firm</p>
 		<h1 class="hero__title hero__in" style="--d: 80ms">
 			Systematic, market-neutral strategies<br />for crypto markets.
 		</h1>
@@ -95,10 +96,10 @@
 		<div class="section__head strategies-preview__head" use:reveal>
 			<div>
 				<p class="eyebrow">What we trade</p>
-				<h2>Two edges, diversified</h2>
+				<h2>Two edges, many expressions</h2>
 				<p class="lede">
 					Mean reversion and momentum — expressed across asset classes, formats
-					and horizons for genuine diversification.
+					and horizons.
 				</p>
 			</div>
 			<a class="btn btn--ghost" href="{base}/strategies">Explore all &rarr;</a>
@@ -129,17 +130,48 @@
 	</div>
 </section>
 
+<!-- Infrastructure / ecosystem strip -->
+<section class="section section--alt">
+	<div class="container">
+		<div class="section__head strategies-preview__head" use:reveal>
+			<div>
+				<p class="eyebrow">Infrastructure</p>
+				<h2>An institutional-grade setup</h2>
+				<p class="lede">
+					Placeholder — a short line on our execution venues and traditional-
+					finance service providers.
+				</p>
+			</div>
+			<a class="btn btn--ghost" href="{base}/infrastructure">Infrastructure &rarr;</a>
+		</div>
+
+		<div class="ecosystem" use:reveal>
+			<div class="ecosystem__item">
+				<span class="ecosystem__label">Exchange</span>
+				<span class="ecosystem__value">
+					{venues.map((v) => v.name).join(' · ')}
+				</span>
+			</div>
+			<div class="ecosystem__item">
+				<span class="ecosystem__label">Service providers</span>
+				<span class="ecosystem__value">
+					{serviceProviders.map((p) => p.label).join(' · ')}
+				</span>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- CTA -->
-<section class="section section--alt cta">
+<section class="section cta">
 	<div class="container cta__inner" use:reveal>
 		<div>
-			<h2>Meet the team</h2>
+			<h2>Get in touch</h2>
 			<p class="lede">
-				Placeholder — a short line inviting the reader to learn about the people
-				behind AfterCoffee.
+				Placeholder — a short line inviting the reader to reach out.
 			</p>
 		</div>
-		<a class="btn btn--primary" href="{base}/about">About us</a>
+		<a class="btn btn--primary" href="{base}/contact">Contact us</a>
 	</div>
 </section>
 
@@ -268,6 +300,37 @@
 	.home-dim__items {
 		font-size: 0.92rem;
 		color: var(--muted);
+	}
+
+	/* Ecosystem / infrastructure strip */
+	.ecosystem {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: var(--gutter);
+	}
+
+	.ecosystem__item {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		padding: clamp(20px, 3vw, 28px);
+		background: var(--bg);
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
+	}
+
+	.ecosystem__label {
+		font-size: 0.74rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--navy-500);
+	}
+
+	.ecosystem__value {
+		font-size: 1.05rem;
+		font-weight: 600;
+		color: var(--navy);
 	}
 
 	.cta__inner {

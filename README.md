@@ -1,29 +1,46 @@
 # AfterCoffee LTD — website
 
-Marketing site for **AfterCoffee LTD**, a quantitative hedge fund running
-systematic strategies in crypto markets. Built with **SvelteKit** (Svelte 5).
+Marketing site for **AfterCoffee LTD**, a quantitative **proprietary trading
+firm** running systematic strategies in crypto markets. Built with **SvelteKit**
+(Svelte 5).
 
 Minimal & professional — navy accent (`#0a1f44`) on a white background.
 
 ## Pages
 
-| Route         | Page          |
-| ------------- | ------------- |
-| `/`           | Home          |
-| `/about`      | About us      |
-| `/strategies` | Our strategies|
+| Route             | Page                                             |
+| ----------------- | ------------------------------------------------ |
+| `/`               | Home                                             |
+| `/about`          | About (team + institutional narrative)           |
+| `/strategies`     | Strategies (families + coverage)                 |
+| `/infrastructure` | Infrastructure (execution venues + providers)    |
+| `/contact`        | Contact (First / Last / Email → thank-you)       |
+| `/legal`          | Legal (Terms, Privacy, Disclaimer)               |
 
-> **Status: skeleton.** Structure, layout and styling are in place. All body
-> copy is placeholder text marked _"Placeholder — to be provided"_ (or shown in
-> muted italic on the page). Swap in the final descriptions when ready.
+> **Status: draft.** Structure, layout and styling are in place. Most body copy
+> is placeholder text marked _"Placeholder — to be provided"_ (or muted italic on
+> the page). Swap in the final copy when ready.
 
 ## Where the content lives
 
 - **Team** — `src/lib/data/team.js`
-  (two surnames are flagged `surnamePending` and render a small _"surname TBC"_ badge)
+  (two surnames are flagged `surnamePending` → small _"surname TBC"_ badge)
 - **Strategies** — `src/lib/data/strategies.js`
-- Page-specific placeholders (hero, pillars, values, process) live inline in the
-  relevant `src/routes/**/+page.svelte`.
+- **Infrastructure** (venues + service providers) — `src/lib/data/infrastructure.js`
+- Page-specific placeholders live inline in the relevant `src/routes/**/+page.svelte`.
+
+## Contact form
+
+The site is fully static, so the contact form has no backend. It validates and
+shows a thank-you state, but to **receive** submissions set `FORM_ENDPOINT` in
+`src/routes/contact/+page.svelte` to a form-handler URL (Formspree, Getform,
+Basin, …). The contact email is `contact@aftercoffee.tech`.
+
+## Legal
+
+`/legal` contains **draft** Terms, Privacy and a proprietary-trading Disclaimer
+with bracketed `[…]` placeholders (company no., jurisdiction, address, dates).
+**Have qualified legal counsel review and finalise before relying on it.**
 
 ## Design tokens
 

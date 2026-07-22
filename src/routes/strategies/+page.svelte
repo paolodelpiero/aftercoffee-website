@@ -1,5 +1,5 @@
 <script>
-	import { families, dimensions, philosophy } from '$lib/data/strategies.js';
+	import { families, dimensions } from '$lib/data/strategies.js';
 	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
 	import { reveal } from '$lib/actions/reveal.js';
 
@@ -16,7 +16,7 @@
 	<title>Strategies — AfterCoffee LTD</title>
 	<meta
 		name="description"
-		content="Systematic mean-reversion and momentum strategies, diversified across asset classes, formats, signal factors and horizons."
+		content="Systematic mean-reversion and momentum strategies expressed across asset classes, formats, signal factors and horizons."
 	/>
 </svelte:head>
 
@@ -26,12 +26,10 @@
 	<div class="container intro__content">
 		<div class="section__head hero__in">
 			<p class="eyebrow">Our strategies</p>
-			<h1>Two edges, many independent expressions.</h1>
+			<h1>Two edges, many expressions.</h1>
 			<p class="lede">
-				We run two core families — mean reversion and momentum — and diversify
-				them across asset classes, formats, signal factors and horizons. The
-				breadth is the point: independent return streams, not a long list of
-				correlated ones.
+				We run two core families — mean reversion and momentum — expressed
+				across asset classes, formats, signal factors and horizons.
 			</p>
 		</div>
 	</div>
@@ -58,15 +56,15 @@
 	</div>
 </section>
 
-<!-- Diversification dimensions -->
+<!-- Dimensions -->
 <section class="section">
 	<div class="container">
 		<div class="section__head" use:reveal>
-			<p class="eyebrow">Diversification</p>
-			<h2>How each edge is diversified</h2>
+			<p class="eyebrow">Coverage</p>
+			<h2>How each edge is expressed</h2>
 			<p class="lede">
-				Every family is expressed along five dimensions — combined, they form a
-				broad set of low-correlation strategies.
+				Each family is expressed along five dimensions — asset classes, formats,
+				signal factors, horizons and construction.
 			</p>
 		</div>
 
@@ -82,26 +80,6 @@
 					</ul>
 				</div>
 			{/each}
-		</div>
-	</div>
-</section>
-
-<!-- Philosophy -->
-<section class="section">
-	<div class="container">
-		<div class="philosophy" use:reveal>
-			<AnimatedBackground waves />
-			<div class="philosophy__content">
-				<p class="eyebrow philosophy__eyebrow">{philosophy.eyebrow}</p>
-				<h2 class="philosophy__title">{philosophy.title}</h2>
-				<p class="philosophy__formula">
-					{philosophy.formula}
-					<span class="philosophy__formula-note">{philosophy.formulaNote}</span>
-				</p>
-				{#each philosophy.body as para (para)}
-					<p class="philosophy__body">{para}</p>
-				{/each}
-			</div>
 		</div>
 	</div>
 </section>
@@ -195,66 +173,6 @@
 		border: 1px solid var(--line);
 		border-radius: 999px;
 		background: var(--bg);
-	}
-
-	/* ---- Philosophy panel ---- */
-	.philosophy {
-		position: relative;
-		overflow: hidden;
-		background: var(--navy);
-		color: var(--on-navy);
-		border-radius: calc(var(--radius) * 1.6);
-		padding: clamp(32px, 6vw, 72px);
-	}
-
-	.philosophy :global(.bg__wave path) {
-		stroke: #ffffff;
-	}
-
-	.philosophy :global(.bg__blob) {
-		opacity: 0.22;
-	}
-
-	.philosophy__content {
-		position: relative;
-		z-index: 1;
-		max-width: 60ch;
-	}
-
-	.philosophy__eyebrow {
-		color: rgba(234, 240, 251, 0.7);
-	}
-
-	.philosophy__title {
-		color: #fff;
-	}
-
-	.philosophy__formula {
-		font-size: clamp(1.4rem, 3.5vw, 2rem);
-		font-weight: 600;
-		letter-spacing: 0.01em;
-		color: #fff;
-		margin: 0.5rem 0 1.5rem;
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: 0.35rem 1rem;
-	}
-
-	.philosophy__formula-note {
-		font-size: 0.9rem;
-		font-weight: 400;
-		letter-spacing: 0;
-		color: rgba(234, 240, 251, 0.65);
-	}
-
-	.philosophy__body {
-		color: rgba(234, 240, 251, 0.82);
-		margin: 0 0 1rem;
-	}
-
-	.philosophy__body:last-child {
-		margin-bottom: 0;
 	}
 
 	/* ---- Process ---- */

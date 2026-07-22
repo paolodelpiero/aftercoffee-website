@@ -39,8 +39,7 @@ export const families = [
 ];
 
 /**
- * The dimensions along which every strategy is diversified. This breadth is the
- * point: independent return streams, not a long list of correlated ones.
+ * The dimensions along which each strategy family is expressed.
  *
  * @typedef {Object} Dimension
  * @property {string} id
@@ -82,18 +81,3 @@ export const dimensions = [
 		items: ['Dollar-neutral', 'Beta-neutral', 'Market-neutral', 'Directional']
 	}
 ];
-
-/**
- * Portfolio-construction philosophy — the "diversification over count" argument,
- * presented publicly (no internal numbers or competitive commentary).
- */
-export const philosophy = {
-	eyebrow: 'How we think about the portfolio',
-	title: 'Diversification over count',
-	formula: 'Sharpe  ∝  edge × √N',
-	formulaNote: 'where N is the number of independent return streams',
-	body: [
-		'A portfolio’s risk-adjusted return scales with the square root of the number of genuinely independent return streams it runs — not the raw number of strategies. A hundred strategies that move together behave like one.',
-		'So we optimise for independence, not count: diversifying across strategy families, asset classes, formats, signal factors and holding horizons. That is what keeps performance from depending on any single edge — and more resilient as individual edges decay.'
-	]
-};
