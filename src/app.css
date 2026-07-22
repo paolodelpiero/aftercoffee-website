@@ -1,0 +1,291 @@
+/* =========================================================================
+   AfterCoffee LTD — global styles
+   Palette: navy accent on a white background. Minimal & professional.
+   ========================================================================= */
+
+:root {
+	/* Brand */
+	--navy: #0a1f44; /* primary accent */
+	--navy-700: #12294f;
+	--navy-600: #1e3a67;
+	--navy-500: #2f4d7a;
+
+	/* Surfaces */
+	--bg: #ffffff;
+	--bg-alt: #f6f8fb; /* subtle section background */
+	--line: #e4e8ef; /* hairline borders */
+
+	/* Text */
+	--text: #172033; /* body copy */
+	--muted: #5b6a82; /* secondary copy */
+	--on-navy: #eaf0fb; /* text on navy surfaces */
+
+	/* Layout */
+	--container: 1120px;
+	--radius: 10px;
+	--gutter: 24px;
+
+	/* Type */
+	--font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
+		Arial, sans-serif;
+	--font-serif: 'Georgia', 'Times New Roman', serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-sans);
+	font-size: 17px;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+/* ---- Typography ------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+	color: var(--navy);
+	line-height: 1.15;
+	letter-spacing: -0.02em;
+	margin: 0 0 0.5em;
+	font-weight: 650;
+}
+
+h1 {
+	font-size: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+h2 {
+	font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+h3 {
+	font-size: 1.2rem;
+	letter-spacing: -0.01em;
+}
+
+p {
+	margin: 0 0 1rem;
+}
+
+a {
+	color: var(--navy-600);
+	text-decoration: none;
+	transition: color 0.15s ease;
+}
+
+a:hover {
+	color: var(--navy);
+}
+
+/* ---- Layout helpers --------------------------------------------------- */
+
+.container {
+	width: 100%;
+	max-width: var(--container);
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+.section {
+	padding-block: clamp(56px, 9vw, 104px);
+}
+
+.section--alt {
+	background: var(--bg-alt);
+	border-block: 1px solid var(--line);
+}
+
+.eyebrow {
+	display: inline-block;
+	font-size: 0.78rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--navy-500);
+	margin-bottom: 0.9rem;
+}
+
+.lede {
+	font-size: clamp(1.05rem, 2vw, 1.25rem);
+	color: var(--muted);
+	max-width: 60ch;
+}
+
+.section__head {
+	max-width: 62ch;
+	margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+/* ---- Buttons ---------------------------------------------------------- */
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	padding: 0.8em 1.5em;
+	border-radius: var(--radius);
+	font-size: 0.95rem;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+		transform 0.05s ease;
+}
+
+.btn:active {
+	transform: translateY(1px);
+}
+
+.btn--primary {
+	background: var(--navy);
+	color: #fff;
+}
+
+.btn--primary:hover {
+	background: var(--navy-700);
+	color: #fff;
+}
+
+.btn--ghost {
+	background: transparent;
+	color: var(--navy);
+	border-color: var(--line);
+}
+
+.btn--ghost:hover {
+	border-color: var(--navy);
+	color: var(--navy);
+}
+
+/* ---- Cards ------------------------------------------------------------ */
+
+.card {
+	background: var(--bg);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: clamp(22px, 3vw, 30px);
+	transition: border-color 0.15s ease, box-shadow 0.15s ease,
+		transform 0.15s ease;
+}
+
+.card:hover {
+	border-color: var(--navy-500);
+	box-shadow: 0 10px 30px -18px rgba(10, 31, 68, 0.45);
+	transform: translateY(-2px);
+}
+
+.grid {
+	display: grid;
+	gap: var(--gutter);
+}
+
+/* ---- Utilities -------------------------------------------------------- */
+
+.placeholder {
+	color: var(--muted);
+	font-style: italic;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+:focus-visible {
+	outline: 2px solid var(--navy-500);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+hr {
+	border: none;
+	border-top: 1px solid var(--line);
+	margin-block: clamp(40px, 6vw, 72px);
+}
+
+/* ---- Scroll reveal (added client-side by use:reveal) ------------------- */
+
+.reveal {
+	opacity: 0;
+	transform: translateY(var(--reveal-y, 18px));
+	transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+	transition-delay: var(--reveal-delay, 0ms);
+	will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+	opacity: 1;
+	transform: none;
+}
+
+/* ---- Entrance animation (plays on load) ------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+	.hero__in {
+		animation: heroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+		animation-delay: var(--d, 0ms);
+	}
+}
+
+@keyframes heroIn {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/* ---- Intro section (holds an AnimatedBackground) ---------------------- */
+
+.intro {
+	position: relative;
+	overflow: hidden;
+}
+
+.intro__content {
+	position: relative;
+	z-index: 1;
+}
+
+/* ---- Reduced motion: disable all decorative motion --------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+}
