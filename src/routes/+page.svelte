@@ -48,7 +48,7 @@
 	<div class="container hero__content">
 		<p class="eyebrow hero__in" style="--d: 0ms">Quantitative proprietary trading firm</p>
 		<h1 class="hero__title hero__in" style="--d: 80ms">
-			Systematic, market-neutral strategies<br />for crypto markets.
+			Systematic strategies<br />for crypto markets.
 		</h1>
 		<p class="lede hero__lede hero__in" style="--d: 160ms">
 			Low beta to the market, mid-frequency and fully systematic — a
