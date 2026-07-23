@@ -23,7 +23,7 @@
 	<title>Strategies — AfterCoffee LTD</title>
 	<meta
 		name="description"
-		content="A market-neutral portfolio of 15–20 systematic strategies across relative value, lead-lag, mean reversion, stat-arb, momentum, directional and cross-sectional alphas."
+		content="A diversified suite of 15–20 systematic alphas across relative value, lead-lag, mean reversion, stat-arb, momentum, directional and cross-sectional."
 	/>
 </svelte:head>
 
@@ -33,10 +33,10 @@
 	<div class="container intro__content">
 		<div class="section__head hero__in">
 			<p class="eyebrow">Our strategies</p>
-			<h1>Many alphas, one portfolio.</h1>
+			<h1>A diversified suite of strategies.</h1>
 			<p class="lede">
-				We combine 15–20 systematic strategies into a single market-neutral
-				portfolio, spanning a range of alpha types.
+				We combine 15–20 systematic alphas into a single portfolio, spanning a
+				range of alpha types.
 			</p>
 		</div>
 	</div>

@@ -52,8 +52,8 @@
 			<p class="eyebrow">About us</p>
 			<h1>Systematic trading, run by people who’ve done it before.</h1>
 			<p class="lede">
-				AfterCoffee is a proprietary trading firm building market-neutral
-				strategies in crypto — quantitative research paired with production-grade
+				AfterCoffee is a proprietary trading firm building systematic strategies
+				in crypto — quantitative research paired with production-grade
 				engineering.
 			</p>
 		</div>

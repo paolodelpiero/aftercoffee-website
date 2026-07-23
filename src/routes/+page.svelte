@@ -6,10 +6,9 @@
 
 	// Hero character chips.
 	const keywords = [
-		'Systematic',
-		'Market-neutral',
-		'Low beta',
+		'Fully systematic',
 		'Mid-frequency',
+		'Uncorrelated',
 		'Centralized exchange'
 	];
 
@@ -38,7 +37,7 @@
 	<title>AfterCoffee LTD — Systematic crypto strategies</title>
 	<meta
 		name="description"
-		content="AfterCoffee LTD is a quantitative proprietary trading firm running systematic, market-neutral strategies in crypto markets."
+		content="AfterCoffee LTD is a quantitative proprietary trading firm running systematic strategies in crypto markets."
 	/>
 </svelte:head>
 
@@ -51,8 +50,8 @@
 			Systematic strategies<br />for crypto markets.
 		</h1>
 		<p class="lede hero__lede hero__in" style="--d: 160ms">
-			Low beta to the market, mid-frequency and fully systematic — a
-			market-neutral book traded on centralized exchanges.
+			Fully systematic, mid-frequency strategies, uncorrelated to the market,
+			traded on centralized exchanges.
 		</p>
 		<div class="hero__actions hero__in" style="--d: 240ms">
 			<a class="btn btn--primary" href="{base}/strategies">Our strategies</a>
@@ -72,8 +71,7 @@
 	<div class="container">
 		<div class="section__head" use:reveal>
 			<p class="eyebrow">The firm</p>
-			<h2>Firm principles</h2>
-			<p class="lede">Placeholder — a one-line summary of how we operate.</p>
+			<h2>Our principles</h2>
 		</div>
 
 		<div class="grid pillars">
@@ -93,10 +91,9 @@
 		<div class="section__head strategies-preview__head" use:reveal>
 			<div>
 				<p class="eyebrow">What we trade</p>
-				<h2>Various alphas, one portfolio</h2>
+				<h2>Diversified suite of strategies</h2>
 				<p class="lede">
-					15–20 systematic strategies combined into a single market-neutral
-					portfolio.
+					15–20 systematic alphas combined into a single portfolio.
 				</p>
 			</div>
 			<a class="btn btn--ghost" href="{base}/strategies">Explore all &rarr;</a>
