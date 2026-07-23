@@ -144,7 +144,7 @@
 		<div>
 			<h2>Get in touch</h2>
 			<p class="lede">
-				Placeholder — a short line inviting the reader to reach out.
+				Reach out and the team will get back to you within 24 hours.
 			</p>
 		</div>
 		<a class="btn btn--primary" href="{base}/contact">Contact us</a>
