@@ -21,7 +21,9 @@ export const team = [
 		first: 'Daniel',
 		last: 'Rumpf',
 		role: 'Chief Executive Officer',
-		bio: 'Placeholder bio — to be provided. Sets the firm’s direction, strategy and partnerships.'
+		bio: 'Entrepreneur and founder across the lending industry — from a peer-to-peer lending platform to a private lending firm. Builds and leads lean, high-performing teams, pairing strategic vision with hands-on execution.',
+		bioFull:
+			'With an entrepreneurial mindset at his core, Daniel has founded and built multiple businesses across the lending industry, ranging from a peer-to-peer lending platform to a private lending firm. He brings a strong passion for leadership and execution, having consistently assembled and guided lean, high-performing teams throughout his ventures. His experience combines strategic vision with a hands-on approach to building and scaling financial businesses.'
 	},
 	{
 		first: 'Suman',

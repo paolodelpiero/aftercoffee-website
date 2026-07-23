@@ -1,6 +1,7 @@
 <script>
 	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
 	import { reveal } from '$lib/actions/reveal.js';
+	import { company } from '$lib/data/company.js';
 
 	const sections = [
 		{ id: 'terms', label: 'Terms of Use' },
@@ -22,7 +23,10 @@
 		<div class="section__head hero__in">
 			<p class="eyebrow">Legal</p>
 			<h1>Terms, privacy &amp; disclaimer.</h1>
-			<p class="lede">Last updated: [date]. Registered as AfterCoffee LTD [company no. / jurisdiction].</p>
+			<p class="lede">
+				Last updated: [date]. {company.name} — company no. {company.companyNumber},
+				registered in {company.jurisdiction}.
+			</p>
 		</div>
 	</div>
 </section>
@@ -76,8 +80,8 @@
 				</p>
 				<h3>Governing law</h3>
 				<p>
-					These Terms are governed by the laws of [jurisdiction], and any disputes
-					are subject to the exclusive jurisdiction of its courts.
+					These Terms are governed by the laws of {company.jurisdiction}, and any
+					disputes are subject to the exclusive jurisdiction of its courts.
 				</p>
 				<h3>Changes</h3>
 				<p>
@@ -107,8 +111,9 @@
 				<h3>Legal basis</h3>
 				<p>
 					We process this data on the basis of your consent and our legitimate
-					interest in responding to enquiries [confirm basis for your jurisdiction,
-					e.g. UK GDPR / GDPR].
+					interest in responding to enquiries [confirm applicable data-protection
+					law — e.g. the Data Protection (Privacy of Personal Information) Act of
+					{company.jurisdiction}, and any others that apply].
 				</p>
 				<h3>Sharing &amp; retention</h3>
 				<p>
@@ -154,8 +159,9 @@
 					responsible for their content or practices.
 				</p>
 				<p>
-					AfterCoffee LTD — [registered address]. Contact:
-					<a href="mailto:contact@aftercoffee.tech">contact@aftercoffee.tech</a>.
+					{company.name} (company no. {company.companyNumber}) — registered
+					office: {company.address}. Contact:
+					<a href="mailto:{company.email}">{company.email}</a>.
 				</p>
 			</section>
 		</div>

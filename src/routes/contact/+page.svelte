@@ -1,5 +1,6 @@
 <script>
 	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
+	import { company } from '$lib/data/company.js';
 
 	// This is a static site (no backend). To actually RECEIVE submissions, create a
 	// form endpoint (e.g. Formspree, Getform, Basin) and paste its POST URL below.
@@ -79,7 +80,11 @@
 				day.
 			</p>
 			<p class="contact__email">
-				<a href="mailto:contact@aftercoffee.tech">contact@aftercoffee.tech</a>
+				<a href="mailto:{company.email}">{company.email}</a>
+			</p>
+			<p class="contact__office">
+				<span class="contact__office-label">Registered office</span>
+				{company.address}
 			</p>
 		</div>
 
@@ -155,6 +160,23 @@
 		margin-top: 1.25rem;
 		font-size: 1.05rem;
 		font-weight: 600;
+	}
+
+	.contact__office {
+		margin-top: 1.5rem;
+		color: var(--muted);
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.contact__office-label {
+		display: block;
+		font-size: 0.72rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--navy-500);
+		margin-bottom: 2px;
 	}
 
 	.contact__card {

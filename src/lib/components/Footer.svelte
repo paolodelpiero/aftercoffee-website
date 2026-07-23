@@ -1,5 +1,6 @@
 <script>
 	import { base } from '$app/paths';
+	import { company } from '$lib/data/company.js';
 	import Logo from './Logo.svelte';
 
 	const year = 2026; // update as needed
@@ -57,9 +58,12 @@
 	</div>
 
 	<div class="container site-footer__legal">
-		<p>&copy; {year} AfterCoffee LTD. All rights reserved.</p>
+		<p>
+			&copy; {year} {company.name}. All rights reserved.<br />
+			Company No. {company.companyNumber} · {company.address}
+		</p>
 		<p class="site-footer__disclaimer">
-			AfterCoffee LTD is a proprietary trading firm and trades its own capital.
+			{company.name} is a proprietary trading firm and trades its own capital.
 			Nothing on this site is investment advice, an offer, or a solicitation to
 			invest. See <a href="{base}/legal">Legal</a>.
 		</p>
