@@ -120,7 +120,8 @@
 			<p class="eyebrow">Infrastructure</p>
 			<h2>Built on top-tier infrastructure</h2>
 			<p class="lede">
-				Placeholder — a short line on our execution stack and trading venues.
+				Our strategies run on a state-of-the-art execution stack and trade on
+				top-tier centralized exchanges.
 			</p>
 		</div>
 
