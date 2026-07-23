@@ -1,16 +1,17 @@
 /**
  * Team roster for AfterCoffee LTD.
  *
- * `surnamePending: true` marks a surname still to be confirmed — the UI shows a
- * subtle placeholder. Fill `last` and drop the flag when the name is final.
- * `prev` lists notable prior firms, shown as small badges.
+ * `bio` is the short card version; `bioFull` (optional) is the long profile shown
+ * in the "See more" modal. `prev` lists notable prior firms (badges).
+ * `surnamePending: true` marks a surname still to be confirmed.
  *
  * @typedef {Object} Member
  * @property {string} first
  * @property {string} last
  * @property {string} role
- * @property {string} bio         Short bio.
- * @property {string[]} [prev]    Prior firms / background.
+ * @property {string} bio          Short bio (card).
+ * @property {string} [bioFull]    Long bio (modal). Omit to hide "See more".
+ * @property {string[]} [prev]     Prior firms / background.
  * @property {boolean} [surnamePending]
  */
 
@@ -28,20 +29,25 @@ export const team = [
 		surnamePending: true,
 		role: 'Senior Quant Researcher',
 		prev: ['PIMCO', 'Deutsche Bank'],
-		bio: 'Brings institutional research experience from PIMCO and Deutsche Bank to systematic crypto strategy design — leading signal research across the firm.'
+		bio: 'Nearly 16 years in quantitative finance — six as a cross-asset trader at investment banks, then a decade as a quant researcher in crypto and futures. Covers the full research lifecycle, from data engineering to production.',
+		bioFull:
+			'Suman has a strong academic foundation in Computer Science and Mathematics, complemented by nearly 16 years of experience across quantitative finance. He began his career as a cross-asset trader at leading investment banks, where he spent six years trading and managing risk across multiple asset classes in fast-paced global markets. Over the past decade, he has worked as a quantitative researcher at hedge funds and proprietary trading firms specializing in cryptocurrency and futures markets. His expertise spans the full quantitative research lifecycle, including large-scale data engineering, research infrastructure development, alpha discovery, statistical modeling, machine learning, signal validation, portfolio construction, risk management, and production deployment. He has designed and built end-to-end research platforms capable of supporting systematic strategy development at scale, while delivering robust, data-driven trading models for live execution. His work combines deep quantitative research with strong software engineering skills, enabling him to bridge research and production effectively.'
 	},
 	{
-		first: 'Adi',
-		last: '',
-		surnamePending: true,
+		first: 'Adhish',
+		last: 'Aggarwal',
 		role: 'Senior Quant Developer',
-		bio: 'Placeholder bio — to be provided. Owns the research-to-production trading infrastructure.'
+		bio: 'Builds the high-performance infrastructure behind our systematic strategies. 7+ years architecting multi-exchange market-data stacks, low-latency order routing and OMS, and venue connectivity via FIX, ZeroMQ and custom TCP.',
+		bioFull:
+			'Adhish Aggarwal is a quantitative developer who builds the high-performance trading infrastructure that powers systematic strategies across crypto and global futures markets. Over more than seven years, he has architected end-to-end execution systems from the ground up — engineering multi-exchange market data stacks that ingest and normalize trades and order-book data at scale, low-latency order routing and OMS layers with idempotent order handling and real-time fill reconciliation, and connectivity to major venues via FIX, ZeroMQ, and custom TCP protocols.'
 	},
 	{
 		first: 'Paolo',
 		last: 'Del Piero',
 		role: 'Junior Quant Researcher',
-		bio: 'Placeholder bio — to be provided. Works on strategy research, backtesting and analysis.'
+		bio: 'Software-engineering background spanning private banking, advisory, fintech and quant research. Certified financial advisor in Italy, fintech founder, and reading Economics & Financial Markets at the University of Trieste.',
+		bioFull:
+			'Paolo Del Piero is a Junior Quantitative Researcher with a strong software engineering background and practical expertise in financial markets. His experience spans private banking, financial advisory, fintech entrepreneurship, and quantitative research. He is a certified financial advisor in Italy and runs a fintech startup, where he combines technology, finance, and product development. He is currently pursuing a degree in Economics and Financial Markets at the University of Trieste. His multidisciplinary background enables him to approach quantitative research from both a technical and market-driven perspective.'
 	}
 ];
 
