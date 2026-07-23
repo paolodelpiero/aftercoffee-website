@@ -1,38 +1,35 @@
 <script>
 	import { base } from '$app/paths';
-	import { families, dimensions } from '$lib/data/strategies.js';
-	import { venues, providers } from '$lib/data/infrastructure.js';
+	import { alphas } from '$lib/data/strategies.js';
 	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
 	import { reveal } from '$lib/actions/reveal.js';
 
-	// Hero strip — a curated set of what we do.
+	// Hero character chips.
 	const keywords = [
-		'Mean Reversion',
-		'Momentum',
-		'Pairs',
-		'Cross-sectional',
-		'Directional',
+		'Systematic',
 		'Market-neutral',
-		'Multi-asset'
+		'Low beta',
+		'Mid-frequency',
+		'Centralized exchange'
 	];
 
-	// Home-page pillars — placeholder copy, to be replaced.
-	const pillars = [
+	// Firm principles — one-sentence placeholders, refine before go-live.
+	const principles = [
 		{
-			title: 'Systematic',
-			body: 'Placeholder — research-driven, rules-based strategies with no discretionary override.'
+			title: 'Top-grade infrastructure',
+			body: 'State-of-the-art EMS and OMS for fast, reliable execution.'
 		},
 		{
-			title: 'Crypto-focused',
-			body: 'Placeholder — trading digital-asset markets, their microstructure and 24/7 liquidity.'
+			title: 'Fully automated',
+			body: 'Strategies run end-to-end, with no manual intervention.'
 		},
 		{
-			title: 'Cross-validated',
-			body: 'Placeholder — methods researched and validated across traditional and crypto markets.'
+			title: 'Risk discipline',
+			body: 'Position sizing, limits and neutral construction, enforced by the system.'
 		},
 		{
-			title: 'Risk-managed',
-			body: 'Placeholder — disciplined sizing, neutral construction and continuous risk monitoring.'
+			title: 'Actively managed monitoring',
+			body: 'Performance and risk are watched continuously, and acted on.'
 		}
 	];
 </script>
@@ -54,15 +51,15 @@
 			Systematic, market-neutral strategies<br />for crypto markets.
 		</h1>
 		<p class="lede hero__lede hero__in" style="--d: 160ms">
-			Placeholder introduction — final copy to be provided. A short statement of
-			what AfterCoffee does and the edge behind it.
+			Low beta to the market, mid-frequency and fully systematic — a
+			market-neutral book traded on centralized exchanges.
 		</p>
 		<div class="hero__actions hero__in" style="--d: 240ms">
 			<a class="btn btn--primary" href="{base}/strategies">Our strategies</a>
 			<a class="btn btn--ghost" href="{base}/about">About us</a>
 		</div>
 
-		<ul class="hero__keywords hero__in" style="--d: 340ms" aria-label="Strategy focus">
+		<ul class="hero__keywords hero__in" style="--d: 340ms" aria-label="What we are">
 			{#each keywords as kw (kw)}
 				<li>{kw}</li>
 			{/each}
@@ -70,20 +67,20 @@
 	</div>
 </section>
 
-<!-- Pillars -->
+<!-- Firm principles -->
 <section class="section section--alt">
 	<div class="container">
 		<div class="section__head" use:reveal>
-			<p class="eyebrow">Our approach</p>
-			<h2>How we invest</h2>
-			<p class="lede">Placeholder — a one-line summary of the firm’s approach.</p>
+			<p class="eyebrow">The firm</p>
+			<h2>Firm principles</h2>
+			<p class="lede">Placeholder — a one-line summary of how we operate.</p>
 		</div>
 
 		<div class="grid pillars">
-			{#each pillars as p, i (p.title)}
+			{#each principles as p, i (p.title)}
 				<div class="card pillar" use:reveal={{ delay: i * 90 }}>
 					<h3>{p.title}</h3>
-					<p class="placeholder">{p.body}</p>
+					<p>{p.body}</p>
 				</div>
 			{/each}
 		</div>
@@ -96,77 +93,48 @@
 		<div class="section__head strategies-preview__head" use:reveal>
 			<div>
 				<p class="eyebrow">What we trade</p>
-				<h2>Two edges, many expressions</h2>
+				<h2>Various alphas, one portfolio</h2>
 				<p class="lede">
-					Mean reversion and momentum — expressed across asset classes, formats
-					and horizons.
+					15–20 systematic strategies combined into a single market-neutral
+					portfolio.
 				</p>
 			</div>
 			<a class="btn btn--ghost" href="{base}/strategies">Explore all &rarr;</a>
 		</div>
 
-		<div class="grid home-families">
-			{#each families as f, i (f.id)}
+		<div class="home-alphas">
+			{#each alphas as a, i (a.id)}
 				<a
-					class="card home-family"
-					href="{base}/strategies#{f.id}"
-					use:reveal={{ delay: i * 90 }}
+					class="home-alpha"
+					href="{base}/strategies#{a.id}"
+					use:reveal={{ delay: i * 50 }}
 				>
-					<span class="home-family__aka">{f.aka}</span>
-					<span class="home-family__title">{f.title}</span>
-					<span class="home-family__tag">{f.tag}</span>
+					{a.title}
 				</a>
-			{/each}
-		</div>
-
-		<div class="home-dims" use:reveal>
-			{#each dimensions as d (d.id)}
-				<div class="home-dim">
-					<span class="home-dim__label">{d.label}</span>
-					<span class="home-dim__items">{d.items.join(' · ')}</span>
-				</div>
 			{/each}
 		</div>
 	</div>
 </section>
 
-<!-- Infrastructure / ecosystem strip -->
+<!-- Infrastructure (placeholder) -->
 <section class="section section--alt">
 	<div class="container">
-		<div class="section__head strategies-preview__head" use:reveal>
-			<div>
-				<p class="eyebrow">Infrastructure</p>
-				<h2>An institutional-grade setup</h2>
-				<p class="lede">
-					Placeholder — a short line on our execution venues and traditional-
-					finance service providers.
-				</p>
-			</div>
-			<a class="btn btn--ghost" href="{base}/infrastructure">Infrastructure &rarr;</a>
+		<div class="section__head" use:reveal>
+			<p class="eyebrow">Infrastructure</p>
+			<h2>Built on top-tier infrastructure</h2>
+			<p class="lede">
+				Placeholder — a short line on our execution stack and trading venues.
+			</p>
 		</div>
 
 		<div class="ecosystem" use:reveal>
 			<div class="ecosystem__item">
-				<span class="ecosystem__label">Exchange</span>
-				<div class="ecosystem__brands">
-					{#each venues as v (v.name)}
-						<span class="ecosystem__brand">
-							<img src={v.logo} alt={v.name} loading="lazy" />
-							{#if !v.wordmark}<span class="ecosystem__brand-name">{v.name}</span>{/if}
-						</span>
-					{/each}
-				</div>
+				<span class="ecosystem__label">Execution stack</span>
+				<span class="ecosystem__value">State-of-the-art EMS / OMS</span>
 			</div>
 			<div class="ecosystem__item">
-				<span class="ecosystem__label">Execution</span>
-				<div class="ecosystem__brands">
-					{#each providers as p (p.name)}
-						<span class="ecosystem__brand">
-							<img src={p.logo} alt={p.name} loading="lazy" />
-							{#if !p.wordmark}<span class="ecosystem__brand-name">{p.name}</span>{/if}
-						</span>
-					{/each}
-				</div>
+				<span class="ecosystem__label">Venues</span>
+				<span class="ecosystem__value">Top-tier centralized exchanges</span>
 			</div>
 		</div>
 	</div>
@@ -230,8 +198,7 @@
 		border-radius: 999px;
 		background: rgba(255, 255, 255, 0.6);
 		backdrop-filter: blur(2px);
-		transition: transform 0.15s ease, border-color 0.15s ease,
-			color 0.15s ease;
+		transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 	}
 
 	.hero__keywords li:hover {
@@ -244,6 +211,10 @@
 		grid-template-columns: repeat(4, 1fr);
 	}
 
+	.pillar p {
+		color: var(--muted);
+	}
+
 	.strategies-preview__head {
 		display: flex;
 		align-items: flex-end;
@@ -252,67 +223,31 @@
 		max-width: none;
 	}
 
-	/* Family cards */
-	.home-families {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	.home-family {
+	/* Alpha chips */
+	.home-alphas {
 		display: flex;
-		flex-direction: column;
-		gap: 4px;
+		flex-wrap: wrap;
+		gap: 12px;
 	}
 
-	.home-family__aka {
-		font-size: 0.74rem;
+	.home-alpha {
+		font-size: 0.95rem;
 		font-weight: 600;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: var(--navy-500);
+		color: var(--navy-600);
+		padding: 10px 18px;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		background: var(--bg);
+		transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 	}
 
-	.home-family__title {
-		font-size: 1.35rem;
-		font-weight: 700;
-		letter-spacing: -0.01em;
+	.home-alpha:hover {
+		transform: translateY(-2px);
+		border-color: var(--navy-500);
 		color: var(--navy);
 	}
 
-	.home-family__tag {
-		color: var(--muted);
-	}
-
-	/* Dimensions summary */
-	.home-dims {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		gap: 4px 32px;
-		margin-top: 28px;
-		padding-top: 28px;
-		border-top: 1px solid var(--line);
-	}
-
-	.home-dim {
-		display: flex;
-		flex-direction: column;
-		gap: 2px;
-		padding-block: 8px;
-	}
-
-	.home-dim__label {
-		font-size: 0.74rem;
-		font-weight: 600;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: var(--navy-500);
-	}
-
-	.home-dim__items {
-		font-size: 0.92rem;
-		color: var(--muted);
-	}
-
-	/* Ecosystem / infrastructure strip */
+	/* Infrastructure strip */
 	.ecosystem {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -337,29 +272,9 @@
 		color: var(--navy-500);
 	}
 
-	.ecosystem__brands {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 10px 22px;
-	}
-
-	.ecosystem__brand {
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
-	}
-
-	.ecosystem__brand img {
-		height: 24px;
-		width: auto;
-		max-width: 150px;
-		object-fit: contain;
-	}
-
-	.ecosystem__brand-name {
+	.ecosystem__value {
 		font-size: 1.05rem;
-		font-weight: 700;
+		font-weight: 600;
 		color: var(--navy);
 	}
 
@@ -382,8 +297,7 @@
 	}
 
 	@media (max-width: 620px) {
-		.pillars,
-		.home-families {
+		.pillars {
 			grid-template-columns: 1fr;
 		}
 		.strategies-preview__head {

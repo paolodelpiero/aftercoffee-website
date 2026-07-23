@@ -27,10 +27,8 @@ export const team = [
 	},
 	{
 		first: 'Suman',
-		last: '',
-		surnamePending: true,
+		last: 'Suarabh',
 		role: 'Senior Quant Researcher',
-		prev: ['PIMCO', 'Deutsche Bank'],
 		bio: 'Nearly 16 years in quantitative finance — six as a cross-asset trader at investment banks, then a decade as a quant researcher in crypto and futures. Covers the full research lifecycle, from data engineering to production.',
 		bioFull:
 			'Suman has a strong academic foundation in Computer Science and Mathematics, complemented by nearly 16 years of experience across quantitative finance. He began his career as a cross-asset trader at leading investment banks, where he spent six years trading and managing risk across multiple asset classes in fast-paced global markets. Over the past decade, he has worked as a quantitative researcher at hedge funds and proprietary trading firms specializing in cryptocurrency and futures markets. His expertise spans the full quantitative research lifecycle, including large-scale data engineering, research infrastructure development, alpha discovery, statistical modeling, machine learning, signal validation, portfolio construction, risk management, and production deployment. He has designed and built end-to-end research platforms capable of supporting systematic strategy development at scale, while delivering robust, data-driven trading models for live execution. His work combines deep quantitative research with strong software engineering skills, enabling him to bridge research and production effectively.'

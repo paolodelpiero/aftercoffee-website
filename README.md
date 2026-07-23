@@ -8,33 +8,30 @@ Minimal & professional — navy accent (`#0a1f44`) on a white background.
 
 ## Pages
 
-| Route             | Page                                             |
-| ----------------- | ------------------------------------------------ |
-| `/`               | Home                                             |
-| `/about`          | About (team + institutional narrative)           |
-| `/strategies`     | Strategies (families + coverage)                 |
-| `/infrastructure` | Infrastructure (execution venues + providers)    |
-| `/contact`        | Contact (First / Last / Email → thank-you)       |
-| `/legal`          | Legal (Terms, Privacy, Disclaimer)               |
+| Route         | Page                                          |
+| ------------- | --------------------------------------------- |
+| `/`           | Home                                          |
+| `/about`      | About (team, bios with "See more" modal)      |
+| `/strategies` | Strategies (alphas + how it works)            |
+| `/contact`    | Contact (First / Last / Email → Formspree)    |
+| `/legal`      | Legal (Terms, Privacy, Disclaimer)            |
 
-> **Status: draft.** Structure, layout and styling are in place. Most body copy
-> is placeholder text marked _"Placeholder — to be provided"_ (or muted italic on
-> the page). Swap in the final copy when ready.
+> **Status: draft.** Structure, layout and styling are in place. Remaining
+> placeholder copy is marked _"Placeholder — …"_ (or muted italic on the page).
 
 ## Where the content lives
 
-- **Team** — `src/lib/data/team.js`
-  (two surnames are flagged `surnamePending` → small _"surname TBC"_ badge)
-- **Strategies** — `src/lib/data/strategies.js`
-- **Infrastructure** (venues + service providers) — `src/lib/data/infrastructure.js`
+- **Team & bios** — `src/lib/data/team.js` (`bio` = card, `bioFull` = "See more")
+- **Strategies (alphas)** — `src/lib/data/strategies.js`
+- **Company details** (address, company no., email, jurisdiction) — `src/lib/data/company.js`
 - Page-specific placeholders live inline in the relevant `src/routes/**/+page.svelte`.
 
 ## Contact form
 
-The site is fully static, so the contact form has no backend. It validates and
-shows a thank-you state, but to **receive** submissions set `FORM_ENDPOINT` in
-`src/routes/contact/+page.svelte` to a form-handler URL (Formspree, Getform,
-Basin, …). The contact email is `contact@aftercoffee.tech`.
+The site is static, so the form posts client-side to **Formspree**
+(`FORM_ENDPOINT` in `src/routes/contact/+page.svelte` →
+`https://formspree.io/f/xzdnawkv`), which emails the team, then shows the
+thank-you state. Contact email: `paolo@aftercoffee.tech`.
 
 ## Legal
 

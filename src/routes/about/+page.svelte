@@ -3,11 +3,20 @@
 	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
 	import { reveal } from '$lib/actions/reveal.js';
 
-	// Firm values — placeholder copy, to be replaced.
+	// Principles — one-sentence drafts, refine before go-live.
 	const values = [
-		{ title: 'Research first', body: 'Placeholder — to be provided.' },
-		{ title: 'Disciplined risk', body: 'Placeholder — to be provided.' },
-		{ title: 'Engineering rigor', body: 'Placeholder — to be provided.' }
+		{
+			title: 'Controlled risk',
+			body: 'Risk is sized, limited and hedged systematically — never an afterthought.'
+		},
+		{
+			title: 'Evidence over narrative',
+			body: 'Every strategy earns its place through out-of-sample evidence.'
+		},
+		{
+			title: 'Built to run',
+			body: 'Research and production are one pipeline, engineered to ship and scale.'
+		}
 	];
 
 	// "See more" profile modal.
@@ -41,12 +50,11 @@
 	<div class="container intro__content">
 		<div class="section__head hero__in">
 			<p class="eyebrow">About us</p>
-			<h1>Built by people from banking, trading and digital-asset infrastructure.</h1>
+			<h1>Systematic trading, run by people who’ve done it before.</h1>
 			<p class="lede">
-				AfterCoffee is a quantitative proprietary trading firm. It is built by a
-				team that has spent years inside banking, trading and digital-asset
-				infrastructure — and understands what it takes to trade crypto markets
-				with institutional discipline.
+				AfterCoffee is a proprietary trading firm building market-neutral
+				strategies in crypto — quantitative research paired with production-grade
+				engineering.
 			</p>
 		</div>
 	</div>
@@ -58,6 +66,13 @@
 		<div class="section__head" use:reveal>
 			<p class="eyebrow">The team</p>
 			<h2>Who we are</h2>
+			<p class="lede">
+				We’re a small, senior team spanning research, development and leadership.
+				Between us, we’ve traded across asset classes, built trading
+				infrastructure from the ground up, and run systematic strategies at hedge
+				funds and proprietary trading firms. We keep the team lean and the
+				feedback loops short. Everyone here researches, builds and ships.
+			</p>
 		</div>
 
 		<div class="grid team-grid">
@@ -143,14 +158,14 @@
 		<div class="section__head" use:reveal>
 			<p class="eyebrow">What we value</p>
 			<h2>Principles</h2>
-			<p class="lede">Placeholder — a short line about how the firm works.</p>
+			<p class="lede">A few principles we hold to.</p>
 		</div>
 
 		<div class="grid values-grid">
 			{#each values as v, i (v.title)}
 				<div class="card" use:reveal={{ delay: i * 90 }}>
 					<h3>{v.title}</h3>
-					<p class="placeholder">{v.body}</p>
+					<p class="value__body">{v.body}</p>
 				</div>
 			{/each}
 		</div>
@@ -258,6 +273,12 @@
 	.member__more:hover {
 		color: var(--navy);
 		gap: 0.6em;
+	}
+
+	.value__body {
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.95rem;
 	}
 
 	.values-grid {

@@ -16,10 +16,7 @@
 		},
 		{
 			title: 'More',
-			links: [
-				{ href: '/infrastructure', label: 'Infrastructure' },
-				{ href: '/contact', label: 'Contact' }
-			]
+			links: [{ href: '/contact', label: 'Contact' }]
 		},
 		{
 			title: 'Legal',

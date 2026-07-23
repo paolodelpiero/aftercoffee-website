@@ -7,7 +7,6 @@
 		{ href: '/', label: 'Home' },
 		{ href: '/about', label: 'About' },
 		{ href: '/strategies', label: 'Strategies' },
-		{ href: '/infrastructure', label: 'Infrastructure' },
 		{ href: '/contact', label: 'Contact' }
 	];
 

@@ -2,11 +2,8 @@
 	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
 	import { company } from '$lib/data/company.js';
 
-	// This is a static site (no backend). To actually RECEIVE submissions, create a
-	// form endpoint (e.g. Formspree, Getform, Basin) and paste its POST URL below.
-	// While empty, the form validates and shows the thank-you state, but does not
-	// deliver anywhere.
-	const FORM_ENDPOINT = '';
+	// Static site (no backend) → submissions go to Formspree, which emails the team.
+	const FORM_ENDPOINT = 'https://formspree.io/f/xzdnawkv';
 
 	let firstName = $state('');
 	let lastName = $state('');
