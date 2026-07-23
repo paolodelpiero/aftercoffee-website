@@ -1,7 +1,7 @@
 <script>
 	import { base } from '$app/paths';
 	import { families, dimensions } from '$lib/data/strategies.js';
-	import { venues, serviceProviders } from '$lib/data/infrastructure.js';
+	import { venues, providers } from '$lib/data/infrastructure.js';
 	import AnimatedBackground from '$lib/components/AnimatedBackground.svelte';
 	import { reveal } from '$lib/actions/reveal.js';
 
@@ -148,15 +148,25 @@
 		<div class="ecosystem" use:reveal>
 			<div class="ecosystem__item">
 				<span class="ecosystem__label">Exchange</span>
-				<span class="ecosystem__value">
-					{venues.map((v) => v.name).join(' · ')}
-				</span>
+				<div class="ecosystem__brands">
+					{#each venues as v (v.name)}
+						<span class="ecosystem__brand">
+							<img src={v.logo} alt={v.name} loading="lazy" />
+							{#if !v.wordmark}<span class="ecosystem__brand-name">{v.name}</span>{/if}
+						</span>
+					{/each}
+				</div>
 			</div>
 			<div class="ecosystem__item">
-				<span class="ecosystem__label">Service providers</span>
-				<span class="ecosystem__value">
-					{serviceProviders.map((p) => p.label).join(' · ')}
-				</span>
+				<span class="ecosystem__label">Execution</span>
+				<div class="ecosystem__brands">
+					{#each providers as p (p.name)}
+						<span class="ecosystem__brand">
+							<img src={p.logo} alt={p.name} loading="lazy" />
+							{#if !p.wordmark}<span class="ecosystem__brand-name">{p.name}</span>{/if}
+						</span>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -327,9 +337,29 @@
 		color: var(--navy-500);
 	}
 
-	.ecosystem__value {
+	.ecosystem__brands {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 10px 22px;
+	}
+
+	.ecosystem__brand {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.ecosystem__brand img {
+		height: 24px;
+		width: auto;
+		max-width: 150px;
+		object-fit: contain;
+	}
+
+	.ecosystem__brand-name {
 		font-size: 1.05rem;
-		font-weight: 600;
+		font-weight: 700;
 		color: var(--navy);
 	}
 
