@@ -61,7 +61,8 @@
 			<p class="eyebrow">Contact</p>
 			<h1>Get in touch.</h1>
 			<p class="lede">
-				Leave your details and the team will get back to you within 24 hours.
+				Leave your details and the team will get back to you within one
+				business day.
 			</p>
 		</div>
 	</div>
@@ -90,7 +91,7 @@
 				<div class="thankyou" role="status">
 					<div class="thankyou__check" aria-hidden="true">✓</div>
 					<h2>Thank you</h2>
-					<p>The team will get back to you within 24 hours.</p>
+					<p>The team will get back to you within one business day.</p>
 				</div>
 			{:else}
 				<form class="form" onsubmit={handleSubmit} novalidate>
