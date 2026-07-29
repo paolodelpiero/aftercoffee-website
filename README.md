@@ -11,7 +11,7 @@ Minimal & professional — navy accent (`#0a1f44`) on a white background.
 | Route         | Page                                          |
 | ------------- | --------------------------------------------- |
 | `/`           | Home                                          |
-| `/about`      | About (team, bios with "See more" modal)      |
+| `/about`      | About (positioning + principles)              |
 | `/strategies` | Strategies (alphas + how it works)            |
 | `/contact`    | Contact (First / Last / Email → Formspree)    |
 | `/legal`      | Legal (Terms, Privacy, Disclaimer)            |
@@ -21,7 +21,6 @@ Minimal & professional — navy accent (`#0a1f44`) on a white background.
 
 ## Where the content lives
 
-- **Team & bios** — `src/lib/data/team.js` (`bio` = card, `bioFull` = "See more")
 - **Strategies (alphas)** — `src/lib/data/strategies.js`
 - **Company details** (address, company no., email, jurisdiction) — `src/lib/data/company.js`
 - Page-specific placeholders live inline in the relevant `src/routes/**/+page.svelte`.
